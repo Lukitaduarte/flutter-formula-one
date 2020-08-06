@@ -22,13 +22,13 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - assets/images/drivers/
     - assets/images/countries/
 
   fonts:
     - family: Formula1
       fonts:
-        - asset: fonts/Formula1-Regular.ttf
-        - asset: fonts/Formula1-Bold.ttf
-        - asset: fonts/Formula1-Black.ttf
-        - asset: fonts/Formula1-Wide.ttf
+        - asset: assets/fonts/Formula1-Regular.ttf
+        - asset: assets/fonts/Formula1-Bold.ttf
+        - asset: assets/fonts/Formula1-Black.ttf
+        - asset: assets/fonts/Formula1-Wide.ttf
