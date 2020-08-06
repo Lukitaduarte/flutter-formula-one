@@ -1,17 +1,37 @@
-# formula_one
+# Formula One App
 
-A Formula One app made with Flutter
+![](app.gif)
 
-## Getting Started
+Esse projeto está sendo desenvolvido afim de estudos e você pode acompanhar ao vivo no canal 
+[twitch.tv/lukitaduarte](twitch.tv/lukitaduarte)
 
-This project is a starting point for a Flutter application.
+O intuito desse projeto é criar um aplicativo do zero para estudos de UI, performance e arquitetura do Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+ - [O que será feito?](#o-que)
+ - [Como será feito?](#como)
+ - [Ambiente](#ambiente)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## O que será feito? <a name="o-que"></a>
+ - [x] Home Screen
+ - [x] Drivers and Teams Detail Screen
+ - [ ] Race Screen
+ - [ ] News Screen / News Detail Screen
+ - [ ] Config. Screen
+ - [ ] Design System
+ - [ ] Internationalization
+ - [ ] Modularization
+ - [ ] Caching
+ - [ ] CI/CD
+ - [ ] Publication
+ 
+ ## Como será feito? <a name="como"></a>
+  A ideia é implementar uma arquitetura de State Management como Bloc, Mobx ou Redux. 
+  Utilizar-se amplamente de abstrações e design patterns como como repository, factory, builder, strategy para tirar o maior proveito de recurso dos devices. 
+  Aprender afundo o funcionamento da arvore de widgets do flutter e testar o catálogo de widgets disponíveis.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter-formula-one
+## Ambiente <a name="ambiente"></a>
+
+    Flutter 1.20.0 • channel stable • https://github.com/flutter/flutter.git
+    Framework • revision 840c9205b3 (20 hours ago) • 2020-08-04 20:55:12 -0700
+    Engine • revision c8e3b94853
+    Tools • Dart 2.9.0
