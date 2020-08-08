@@ -4,6 +4,7 @@ import 'package:formula_one/src/components/cards/card_ui_model.dart';
 import 'package:formula_one/src/components/colors.dart';
 import 'package:formula_one/src/components/lists/list_item.dart';
 import 'package:formula_one/src/components/lists/list_item_ui_model.dart';
+import 'package:formula_one/src/screens/classification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   Widget _buildDrawer() {
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSidebar() {
+  Widget _buildSidebar(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(12),
       child: Column(
@@ -57,9 +58,18 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Icon(
-            Icons.person,
-            color: FormulaPrimary,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ClassificationScreen()
+                ),
+              );
+            },
+            child: Icon(
+              Icons.person,
+              color: FormulaPrimary,
+            ),
           ),
           Text(
             "Pilotos",
@@ -68,9 +78,18 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Icon(
-            Icons.filter_9_plus,
-            color: FormulaPrimary,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ClassificationScreen()
+                ),
+              );
+            },
+            child: Icon(
+              Icons.filter_9_plus,
+              color: FormulaPrimary,
+            ),
           ),
           Text(
             "Equipes",
@@ -85,17 +104,6 @@ class HomeScreen extends StatelessWidget {
           ),
           Text(
             "Corridas",
-            style: TextStyle(color: FormulaPrimary, fontSize: 10),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Icon(
-            Icons.live_tv,
-            color: FormulaPrimary,
-          ),
-          Text(
-            "Trans.",
             style: TextStyle(color: FormulaPrimary, fontSize: 10),
           ),
           SizedBox(
@@ -234,7 +242,7 @@ class HomeScreen extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            _buildSidebar(),
+            _buildSidebar(context),
             _buildMainContainer(context),
           ],
         ),
