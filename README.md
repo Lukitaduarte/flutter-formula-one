@@ -3,7 +3,7 @@
 ![](app.gif)
 
 Esse projeto está sendo desenvolvido afim de estudos e você pode acompanhar ao vivo no canal 
-[https://twitch.tv/lukitaduarte](twitch.tv/lukitaduarte)
+[twitch.tv/lukitaduarte](https://twitch.tv/lukitaduarte)
 
 O intuito desse projeto é criar um aplicativo do zero para estudos de UI, performance e arquitetura do Flutter.
 
