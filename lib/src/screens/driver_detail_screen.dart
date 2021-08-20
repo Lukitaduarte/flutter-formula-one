@@ -1,20 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../components/colors.dart';
+import '../themes/colors.dart';
 
-class DriverDetailScreen extends StatelessWidget {
+class DriverDetailScreen extends StatefulWidget {
   final String tag;
 
   DriverDetailScreen({this.tag});
 
+  @override
+  _DriverDetailScreenState createState() => _DriverDetailScreenState();
+}
+
+class _DriverDetailScreenState extends State<DriverDetailScreen> {
+  double _detailsPosition = -200;
+
   Widget _buildHero() {
-    return Expanded(
-      flex: 2,
-      child: Container(
-        color: FormulaPrimary,
-        child: Hero(
-          tag: tag,
+    return Positioned(
+      top: 0,
+      right: 0,
+      left: 0,
+      bottom: 200,
+      child: Hero(
+        tag: widget.tag,
+        child: ShaderMask(
+          shaderCallback: (rect) {
+            return LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.6, 1],
+              colors: [FormulaPrimaryDark, Colors.transparent],
+            ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
+          },
+          blendMode: BlendMode.dstIn,
           child: Image.asset(
             "assets/images/drivers/hamilton.png",
             fit: BoxFit.cover,
@@ -28,54 +46,73 @@ class DriverDetailScreen extends StatelessWidget {
     return Container(
       height: 80,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 4,
-        itemBuilder: (context, index ) {
-          return Row(
-            children: <Widget>[
-              ClipPath(
-                clipper: ShapeBorderClipper(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
+          scrollDirection: Axis.horizontal,
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return Row(
+              children: <Widget>[
+                ClipPath(
+                  clipper: ShapeBorderClipper(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(3),
+                    ),
                   ),
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: FormulaDark,
-                      border:
-                      Border(top: BorderSide(color: FormulaAccent, width: 4))),
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "225",
-                          style: TextStyle(
-                              color: FormulaPrimary, fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Races",
-                          style: TextStyle(color: FormulaPrimary, fontSize: 10),
-                        ),
-                      ],
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: FormulaDark,
+                        border: Border(
+                            top: BorderSide(color: FormulaAccent, width: 4))),
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "225",
+                            style: TextStyle(
+                                color: FormulaPrimary,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Races",
+                            style:
+                                TextStyle(color: FormulaPrimary, fontSize: 10),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(width: 16,),
-            ],
-          );
-        }
-      ),
+                SizedBox(
+                  width: 16,
+                ),
+              ],
+            );
+          }),
     );
   }
 
   Widget _buildDetails() {
-    return Expanded(
+    return AnimatedPositioned(
+      right: 0,
+      left: 0,
+      bottom: _detailsPosition,
+      duration: Duration(seconds: 1),
+      curve: Curves.fastLinearToSlowEaseIn,
       child: Container(
-        color: FormulaPrimaryDark,
         padding: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.transparent,
+              FormulaPrimaryDark,
+              FormulaPrimaryDark
+            ],
+          ),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -123,13 +160,20 @@ class DriverDetailScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            _buildHero(),
-            _buildDetails()
-          ],
+        child: Stack(
+          children: <Widget>[_buildHero(), _buildDetails()],
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(milliseconds: 50), () {
+      setState(() {
+        _detailsPosition = 50;
+      });
+    });
   }
 }

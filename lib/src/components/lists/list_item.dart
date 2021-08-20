@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formula_one/src/components/lists/list_item_ui_model.dart';
 
-import '../colors.dart';
+import '../../themes/colors.dart';
 
 class ListItem extends StatelessWidget {
   final ListItemUiModel uiModel;

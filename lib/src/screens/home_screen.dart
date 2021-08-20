@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formula_one/src/components/cards/card_item.dart';
 import 'package:formula_one/src/components/cards/card_ui_model.dart';
-import 'package:formula_one/src/components/colors.dart';
+import 'package:formula_one/src/themes/colors.dart';
 import 'package:formula_one/src/components/lists/list_item.dart';
 import 'package:formula_one/src/components/lists/list_item_ui_model.dart';
 import 'package:formula_one/src/components/menu/menu_item_ui_model.dart';

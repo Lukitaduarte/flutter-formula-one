@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formula_one/src/screens/home_screen.dart';
 
-import 'src/components/colors.dart';
+import 'src/themes/colors.dart';
 
 void main() {
   runApp(MyApp());

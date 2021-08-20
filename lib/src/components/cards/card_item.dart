@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:formula_one/src/components/cards/card_ui_model.dart';
 import 'package:formula_one/src/screens/driver_detail_screen.dart';
 
-import '../colors.dart';
+import '../../themes/colors.dart';
 
 class CardItem extends StatelessWidget {
   final CardUiModel uiModel;
