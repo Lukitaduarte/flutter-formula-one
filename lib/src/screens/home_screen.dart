@@ -6,30 +6,6 @@ import 'package:formula_one/src/components/lists/list_item.dart';
 import 'package:formula_one/src/components/lists/list_item_ui_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  Widget _buildDrawer() {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Text('Drawer Header'),
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-          ),
-          ListTile(
-            title: Text('Item 1'),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Item 2'),
-            onTap: () {},
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildSidebar() {
     return Container(
       margin: EdgeInsets.all(12),
@@ -229,7 +205,6 @@ class HomeScreen extends StatelessWidget {
         title: Text("FORMULA 1"),
         elevation: 0,
       ),
-      drawer: _buildDrawer(),
       body: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
