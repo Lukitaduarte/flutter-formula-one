@@ -5,8 +5,8 @@ import '../colors.dart';
 
 class MenuItemWidget extends StatelessWidget {
   const MenuItemWidget({
-    Key key,
-    this.model,
+    Key? key,
+    required this.model,
   }) : super(key: key);
 
   final MenuItemUiModel model;

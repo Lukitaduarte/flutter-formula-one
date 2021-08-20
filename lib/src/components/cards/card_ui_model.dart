@@ -8,10 +8,10 @@ class CardUiModel {
   final String lastName;
 
   CardUiModel({
-    this.heroTag,
-    this.imageDriver,
-    this.imageCountry,
-    this.name,
-    this.lastName
+    required this.heroTag,
+    required this.imageDriver,
+    required this.imageCountry,
+    required this.name,
+    required this.lastName
   });
 }

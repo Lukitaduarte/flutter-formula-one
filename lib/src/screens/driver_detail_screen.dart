@@ -6,7 +6,7 @@ import '../components/colors.dart';
 class DriverDetailScreen extends StatelessWidget {
   final String tag;
 
-  DriverDetailScreen({this.tag});
+  DriverDetailScreen({required this.tag});
 
   Widget _buildHero() {
     return Expanded(

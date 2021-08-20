@@ -5,8 +5,8 @@ import 'menu_item_ui_model.dart';
 
 class MenuWidget extends StatelessWidget {
   const MenuWidget({
-    Key key,
-    this.items,
+    Key? key,
+    required this.items,
   }) : super(key: key);
 
   final List<MenuItemUiModel> items;
