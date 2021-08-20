@@ -6,8 +6,8 @@ class MenuItemUiModel {
   final GestureTapCallback onPressed;
 
   MenuItemUiModel({
-    @required this.icon,
-    @required this.label,
-    @required this.onPressed,
+    required this.icon,
+    required this.label,
+    required this.onPressed,
   });
 }

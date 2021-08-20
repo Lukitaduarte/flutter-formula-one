@@ -8,10 +8,10 @@ class ListItemUiModel {
   final Widget imageCountry;
 
   ListItemUiModel({
-    @required this.date,
-    @required this.hour,
-    @required this.title,
-    @required this.country,
-    @required this.imageCountry
+    required this.date,
+    required this.hour,
+    required this.title,
+    required this.country,
+    required this.imageCountry
   });
 }

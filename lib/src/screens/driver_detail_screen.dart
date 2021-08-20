@@ -6,7 +6,7 @@ import '../themes/colors.dart';
 class DriverDetailScreen extends StatefulWidget {
   final String tag;
 
-  DriverDetailScreen({this.tag});
+  DriverDetailScreen({required this.tag});
 
   @override
   _DriverDetailScreenState createState() => _DriverDetailScreenState();
