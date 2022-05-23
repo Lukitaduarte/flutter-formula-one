@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.3
+  animations: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +24,7 @@ flutter:
   assets:
     - assets/images/drivers/
     - assets/images/countries/
+    - assets/images/news/
 
   fonts:
     - family: Formula1
