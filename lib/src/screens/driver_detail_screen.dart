@@ -170,7 +170,7 @@ class _DriverDetailScreenState extends State<DriverDetailScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 50), () {
+    Future.delayed(Duration(milliseconds: 100), () {
       setState(() {
         _detailsPosition = 50;
       });

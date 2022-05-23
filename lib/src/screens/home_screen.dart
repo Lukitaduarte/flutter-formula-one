@@ -1,40 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:formula_one/src/components/cards/card_item.dart';
 import 'package:formula_one/src/components/cards/card_ui_model.dart';
-import 'package:formula_one/src/themes/colors.dart';
+import 'package:formula_one/src/components/scaffold/fast_scaffold.dart';
 import 'package:formula_one/src/components/lists/list_item.dart';
 import 'package:formula_one/src/components/lists/list_item_ui_model.dart';
-import 'package:formula_one/src/components/menu/menu_item_ui_model.dart';
-import 'package:formula_one/src/components/menu/menu_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<MenuItemUiModel> menuItems = [
-    MenuItemUiModel(
-      icon: Icons.home,
-      label: 'Início',
-      onPressed: () => print('inicio'),
-    ),
-    MenuItemUiModel(
-      icon: Icons.description,
-      label: 'Notícias',
-      onPressed: () => print('noticia'),
-    ),
-    MenuItemUiModel(
-      icon: Icons.list,
-      label: 'Classific.',
-      onPressed: () => print('classificacao'),
-    ),
-    MenuItemUiModel(
-      icon: Icons.assistant_photo,
-      label: 'Corridas',
-      onPressed: () => print('corridas'),
-    ),
-    MenuItemUiModel(
-      icon: Icons.info_outline,
-      label: 'Sobre',
-      onPressed: () => print('sobre'),
-    ),
-  ];
 
   Widget _buildNextRace() {
     final ListItemUiModel uiModel = ListItemUiModel(
@@ -56,7 +27,6 @@ class HomeScreen extends StatelessWidget {
                 "Próximas Corridas",
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
-              Text("Ver todas"),
             ],
           ),
         ),
@@ -113,53 +83,15 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMainContainer(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(25.0),
-      ),
-      child: Container(
-        color: FormulaPrimary,
-        child: Align(
-          alignment: Alignment.topLeft,
-          child: SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: <Widget>[
-                  _buildNextRace(),
-                  _buildHorizontalList("Pilotos"),
-                  _buildHorizontalList("Equipes")
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: FormulaPrimaryDark,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text("FORMULA 1"),
-        elevation: 0,
-      ),
-      body: Container(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+    return FastScaffold(
+      body: SingleChildScrollView(
+        child: Column(
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: MenuWidget(items: menuItems),
-            ),
-            Expanded(
-              flex: 5,
-              child: _buildMainContainer(context),
-            ),
+            _buildNextRace(),
+            _buildHorizontalList("Pilotos"),
+            _buildHorizontalList("Equipes")
           ],
         ),
       ),
